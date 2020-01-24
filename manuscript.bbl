@@ -1,0 +1,583 @@
+\begin{thebibliography}{110}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Al~Dallal and Briand(2010)}]{al2010object}
+Al~Dallal J, Briand LC (2010) An object-oriented high-level design-based class
+  cohesion metric. Information and software technology 52(12):1346--1361
+
+\bibitem[{Altman(1999)}]{altman99}
+Altman E (1999) Constrained Markov decision processes, vol~7. CRC Press
+
+\bibitem[{Alves et~al.(2010)Alves, Ypma, and Visser}]{alves}
+Alves TL, Ypma C, Visser J (2010) {Deriving metric thresholds from benchmark
+  data}. In: 2010 IEEE Int. Conf. Softw. Maint., IEEE, pp 1--10,
+  \doi{10.1109/ICSM.2010.5609747}
+
+\bibitem[{Andrews et~al.(2007)Andrews, Li, and Menzies}]{andrews07}
+Andrews JH, Li FCH, Menzies T (2007) {Nighthawk: A Two-Level Genetic-Random
+  Unit Test Data Generator}. In: IEEE ASE'07
+
+\bibitem[{Andrews et~al.(2010)Andrews, Menzies, and Li}]{andrews10}
+Andrews JH, Menzies T, Li FCH (2010) {Genetic Algorithms for Randomized Unit
+  Testing}. IEEE Transactions on Software Engineering
+
+\bibitem[{Baier and McIlraith(2009)}]{baier09}
+Baier SSJA, McIlraith SA (2009) Htn planning with preferences. In: 21st Int.
+  Joint Conf. on Artificial Intelligence, pp 1790--1797
+
+\bibitem[{Bansiya and Davis(2002)}]{Bansiya02}
+Bansiya J, Davis CG (2002) A hierarchical model for object-oriented design
+  quality assessment. IEEE Trans Softw Eng 28(1):4--17, \doi{10.1109/32.979986}
+
+\bibitem[{Begel and Zimmermann(2014)}]{export:208800}
+Begel A, Zimmermann T (2014) Analyze this! 145 questions for data scientists in
+  software engineering. In: Proc. 36th Intl. Conf. Software Engineering (ICSE
+  2014), ACM
+
+\bibitem[{Bellman(1957)}]{Bel}
+Bellman R (1957) A markovian decision process. Indiana Univ Math J 6:679--684
+
+\bibitem[{Bender(1999)}]{bender99}
+Bender R (1999) Quantitative risk assessment in epidemiological studies
+  investigating threshold effects. Biometrical Journal 41(3):305--319
+
+\bibitem[{Bener et~al.(2015)Bener, Misirli, Caglayan, Kocaguneli, and
+  Calikli}]{bener2015lessons}
+Bener A, Misirli AT, Caglayan B, Kocaguneli E, Calikli G (2015) Lessons learned
+  from software analytics in practice. In: The Art and Science of Analyzing
+  Software Data, Elsevier, pp 453--489
+
+\bibitem[{Blue et~al.(2013)Blue, Segall, Tzoref-Brill, and
+  Zlotnick}]{blue2013interaction}
+Blue D, Segall I, Tzoref-Brill R, Zlotnick A (2013) Interaction-based
+  test-suite minimization. In: Proc. the 2013 Intl. Conf. Software Engineering,
+  IEEE Press, pp 182--191
+
+\bibitem[{Boehm(1981)}]{boehm81}
+Boehm B (1981) {Software Engineering Economics}. Prentice Hall
+
+\bibitem[{Boehm et~al.(2000)Boehm, Horowitz, Madachy, Reifer, Clark, Steece,
+  Brown, Chulani, and Abts}]{boehm00b}
+Boehm B, Horowitz E, Madachy R, Reifer D, Clark BK, Steece B, Brown AW, Chulani
+  S, Abts C (2000) {Software Cost Estimation with Cocomo II}. Prentice Hall
+
+\bibitem[{Bryton and e~Abreu(2009)}]{bryton2009}
+Bryton S, e~Abreu FB (2009) Strengthening refactoring: towards software
+  evolution with quantitative and experimental grounds. In: Software
+  Engineering Advances, 2009. ICSEA'09. Fourth Intl. Conf., IEEE, pp 570--575
+
+\bibitem[{Cheng and Jensen(2010)}]{Cheng10}
+Cheng B, Jensen A (2010) On the use of genetic programming for automated
+  refactoring and the introduction of design patterns. In: Proc. 12th Annual
+  Conf. Genetic and Evolutionary Computation, ACM, New York, NY, USA, GECCO
+  '10, pp 1341--1348, \doi{10.1145/1830483.1830731}
+
+\bibitem[{Chidamber and Kemerer(1994)}]{chidamber1994metrics}
+Chidamber SR, Kemerer CF (1994) A metrics suite for object oriented design.
+  IEEE Transactions on software engineering 20(6):476--493
+
+\bibitem[{Chidamber et~al.(1998)Chidamber, Darcy, and
+  Kemerer}]{chidamber1998managerial}
+Chidamber SR, Darcy DP, Kemerer CF (1998) Managerial use of metrics for
+  object-oriented software: An exploratory analysis. IEEE Transactions on
+  software Engineering 24(8):629--639
+
+\bibitem[{Cortes and Vapnik(1995)}]{cortes95}
+Cortes C, Vapnik V (1995) Support-vector networks. Machine learning
+  20(3):273--297
+
+\bibitem[{Cui et~al.(2005)Cui, Potok, and Palathingal}]{Cui2005a}
+Cui X, Potok T, Palathingal P (2005) {Document clustering using particle swarm
+  optimization}. \ldots Intelligence Symposium, 2005 \ldots
+
+\bibitem[{Czerwonka et~al.(2011)Czerwonka, Das, Nagappan, Tarvo, and
+  Teterev}]{czer11}
+Czerwonka J, Das R, Nagappan N, Tarvo A, Teterev A (2011) Crane: Failure
+  prediction, change analysis and test prioritization in practice --
+  experiences from windows. In: Software Testing, Verification and Validation
+  (ICST), 2011 IEEE Fourth Intl. Conference on, pp 357 --366
+
+\bibitem[{Deb and Jain(2014)}]{deb14}
+Deb K, Jain H (2014) {An Evolutionary Many-Objective Optimization Algorithm
+  Using Reference-Point-Based Nondominated Sorting Approach, Part I: Solving
+  Problems With Box Constraints}. Evolutionary Computation, IEEE Transactions
+  on 18(4):577--601, \doi{10.1109/TEVC.2013.2281535}
+
+\bibitem[{Deb et~al.(2002)Deb, Pratap, Agarwal, and Meyarivan}]{deb00a}
+Deb K, Pratap A, Agarwal S, Meyarivan T (2002) {A Fast Elitist Multi-Objective
+  Genetic Algorithm: NSGA-II}. IEEE Transactions on Evolutionary Computation
+  6:182--197
+
+\bibitem[{Devanbu et~al.(2016)Devanbu, Zimmermann, and Bird}]{prem16}
+Devanbu P, Zimmermann T, Bird C (2016) Belief \& evidence in empirical software
+  engineering. In: Proc. 38th Intl. Conf. Software Engineering, ACM, pp
+  108--119
+
+\bibitem[{Du~Bois(2006)}]{du2006study}
+Du~Bois B (2006) A study of quality improvements by refactoring
+
+\bibitem[{Elish and Alshayeb(2011)}]{elish2011}
+Elish K, Alshayeb M (2011) A classification of refactoring methods based on
+  software quality attributes. Arabian Journal for Science and Engineering
+  36(7):1253--1267
+
+\bibitem[{Elish and Alshayeb(2012)}]{elish2012}
+Elish K, Alshayeb M (2012) Using software quality attributes to classify
+  refactoring to patterns. JSW 7(2):408--419
+
+\bibitem[{Fayyad and Irani(1993)}]{fi}
+Fayyad U, Irani K (1993) Multi-interval discretization of continuous-valued
+  attributes for classification learning. NASA JPL Archives
+
+\bibitem[{Fu et~al.(2016)Fu, Menzies, and Shen}]{fu}
+Fu W, Menzies T, Shen X (2016) Tuning for software analytics: is it really
+  necessary? Information and Software Technology (submitted)
+
+\bibitem[{Ghallab et~al.(2004)Ghallab, Nau, and Traverso}]{ghallab04}
+Ghallab M, Nau D, Traverso P (2004) Automated Planning: theory and practice.
+  Elsevier
+
+\bibitem[{Ghotra et~al.(2015)Ghotra, McIntosh, and
+  Hassan}]{ghotra2015revisiting}
+Ghotra B, McIntosh S, Hassan AE (2015) Revisiting the impact of classification
+  techniques on the performance of defect prediction models. In: 37th
+  ICSE-Volume 1, IEEE Press, pp 789--800
+
+\bibitem[{Graves et~al.(2000)Graves, Karr, Marron, and Siy}]{graves2000}
+Graves TL, Karr AF, Marron JS, Siy H (2000) Predicting fault incidence using
+  software change history. IEEE Transactions on software engineering
+  26(7):653--661
+
+\bibitem[{Guo and Hern{\'a}ndez-Lerma(2009)}]{guo2009}
+Guo X, Hern{\'a}ndez-Lerma O (2009) Continuous-time markov decision processes.
+  Continuous-Time Markov Decision Processes pp 9--18
+
+\bibitem[{Halstead(1977)}]{halstead77}
+Halstead MH (1977) Elements of software science, vol~7. Elsevier New York
+
+\bibitem[{Han et~al.(2007)Han, Cheng, Xin, and Yan}]{han2007frequent}
+Han J, Cheng H, Xin D, Yan X (2007) Frequent pattern mining: current status and
+  future directions. Data mining and knowledge discovery 15(1):55--86
+
+\bibitem[{Harman et~al.(2009)Harman, Mansouri, and Zhang}]{Harman2009}
+Harman M, Mansouri SA, Zhang Y (2009) Search based software engineering: A
+  comprehensive analysis and review of trends techniques and applications.
+  Department of Computer Science, King’s College London, Tech Rep TR-09-03
+
+\bibitem[{Harman et~al.(2011)Harman, McMinn, {De Souza}, and Yoo}]{Harman2011}
+Harman M, McMinn P, {De Souza} J, Yoo S (2011) {Search based software
+  engineering: Techniques, taxonomy, tutorial}. Search 2012:1--59,
+  \doi{10.1007/978-3-642-25231-0\_1}
+
+\bibitem[{Henard et~al.(2015)Henard, Papadakis, Harman, and Traon}]{henard15}
+Henard C, Papadakis M, Harman M, Traon YL (2015) Combining multi-objective
+  search and constraint solving for configuring large software product lines.
+  In: 2015 IEEE/ACM 37th IEEE Intl. Conf. Software Engineering, vol~1, pp
+  517--528, \doi{10.1109/ICSE.2015.69}
+
+\bibitem[{Hihn and Menzies(2015)}]{hihn15}
+Hihn J, Menzies T (2015) Data mining methods and cost estimation models: Why is
+  it so hard to infuse new ideas? In: 2015 30th IEEE/ACM Intl. Conf. Automated
+  Software Engineering Workshop (ASEW), pp 5--9, \doi{10.1109/ASEW.2015.27}
+
+\bibitem[{Ii et~al.(2009)Ii, Menzies, Williams, and El-Rawas}]{me09i}
+Ii PG, Menzies T, Williams S, El-Rawas O (2009) Understanding the value of
+  software engineering technologies. In: Proceedings of the 2009 IEEE/ACM
+  International Conference on Automated Software Engineering, IEEE Computer
+  Society, pp 52--61
+
+\bibitem[{Jing et~al.(2015)Jing, Wu, Dong, Qi, and Xu}]{jing15}
+Jing X, Wu G, Dong X, Qi F, Xu B (2015) Heterogeneous cross-company defect
+  prediction by unified metric representation and cca-based transfer learning.
+  In: FSE'15
+
+\bibitem[{J{\o}rgensen and Gruschke(2009)}]{jorgensen09}
+J{\o}rgensen M, Gruschke TM (2009) The impact of lessons-learned sessions on
+  effort estimation and uncertainty assessments. Software Engineering, IEEE
+  Transactions on 35(3):368 --383
+
+\bibitem[{Jureczko and Madeyski(2010)}]{Jureczko2010}
+Jureczko M, Madeyski L (2010) {Towards identifying software project clusters
+  with regard to defect prediction}. In: Proc. 6th Int. Conf. Predict. Model.
+  Softw. Eng. - PROMISE '10, ACM Press, New York, New York, USA, p~1,
+  \doi{10.1145/1868328.1868342}
+
+\bibitem[{Kataoka et~al.(2002)Kataoka, Imai, Andou, and Fukaya}]{kataoka2002}
+Kataoka Y, Imai T, Andou H, Fukaya T (2002) A quantitative evaluation of
+  maintainability enhancement by refactoring. In: Software Maintenance, 2002.
+  Proceedings. Intl. Conf., IEEE, pp 576--585
+
+\bibitem[{Kocaguneli and Menzies(2011)}]{kocaguneli2011find}
+Kocaguneli E, Menzies T (2011) How to find relevant data for effort estimation?
+  In: Empirical Software Engineering and Measurement (ESEM), 2011 Intl.
+  Symposium on, IEEE, pp 255--264
+
+\bibitem[{Kocaguneli et~al.(2012)Kocaguneli, Menzies, Bener, and
+  Keung}]{koc11b}
+Kocaguneli E, Menzies T, Bener A, Keung J (2012) Exploiting the essential
+  assumptions of analogy-based effort estimation. IEEE Transactions on Software
+  Engineering 28:425--438
+
+\bibitem[{Kocaguneli et~al.(2015)Kocaguneli, Menzies, and
+  Mendes}]{kocaguneli2012}
+Kocaguneli E, Menzies T, Mendes E (2015) {Transfer learning in effort
+  estimation}. Empirical Software Engineering 20(3):813--843,
+  \doi{10.1007/s10664-014-9300-5}
+
+\bibitem[{Krall et~al.(2015)Krall, Menzies, and Davies}]{krall2015gale}
+Krall J, Menzies T, Davies M (2015) Gale: Geometric active learning for
+  search-based software engineering. IEEE Transactions on Software Engineering
+  41(10):1001--1018
+
+\bibitem[{Krishna(2017)}]{krishna2017b}
+Krishna R (2017) Learning effective changes for software projects. In:
+  Proceedings of the 32nd IEEE/ACM International Conference on Automated
+  Software Engineering, IEEE Press, pp 1002--1005
+
+\bibitem[{{Krishna} and {Menzies}(2015)}]{krishna15}
+{Krishna} R, {Menzies} T (2015) Actionable = cluster + contrast? In: 2015 30th
+  IEEE/ACM International Conference on Automated Software Engineering Workshop
+  (ASEW), pp 14--17, \doi{10.1109/ASEW.2015.23}
+
+\bibitem[{Krishna and Menzies(2018)}]{krishna17b}
+Krishna R, Menzies T (2018) Bellwethers: A baseline method for transfer
+  learning. IEEE Transactions on Software Engineering pp 1--1,
+  \doi{10.1109/TSE.2018.2821670}
+
+\bibitem[{Krishna et~al.(2016)Krishna, Menzies, and Fu}]{krishna16}
+Krishna R, Menzies T, Fu W (2016) {Too much automation? the bellwether effect
+  and its implications for transfer learning}. In: Proc. 31st IEEE/ACM Intl.
+  Conf. Automated Software Engineering - ASE 2016, ACM Press, New York, New
+  York, USA, pp 122--131, \doi{10.1145/2970276.2970339}
+
+\bibitem[{Krishna et~al.(2017{\natexlab{a}})Krishna, Menzies, and
+  Layman}]{krishna17a}
+Krishna R, Menzies T, Layman L (2017{\natexlab{a}}) {Less is more: Minimizing
+  code reorganization using XTREE}. Information and Software Technology
+  \doi{10.1016/j.infsof.2017.03.012}, \eprint{1609.03614}
+
+\bibitem[{Krishna et~al.(2017{\natexlab{b}})Krishna, Menzies, and
+  Layman}]{krishna2017less}
+Krishna R, Menzies T, Layman L (2017{\natexlab{b}}) Less is more: Minimizing
+  code reorganization using xtree. Information and Software Technology
+  88:53--66
+
+\bibitem[{{Le Goues} et~al.(2012){Le Goues}, Dewey-Vogt, Forrest, and
+  Weimer}]{Goues12}
+{Le Goues} C, Dewey-Vogt M, Forrest S, Weimer W (2012) {A systematic study of
+  automated program repair: Fixing 55 out of 105 bugs for {\$}8 each}. In: 2012
+  34th Intl. Conf. Software Engineering (ICSE), IEEE, pp 3--13,
+  \doi{10.1109/ICSE.2012.6227211}
+
+\bibitem[{{Le Goues} et~al.(2015){Le Goues}, Holtschulte, Smith, Brun, Devanbu,
+  Forrest, and Weimer}]{LeGoues2015}
+{Le Goues} C, Holtschulte N, Smith EK, Brun Y, Devanbu P, Forrest S, Weimer W
+  (2015) {The ManyBugs and IntroClass Benchmarks for Automated Repair of C
+  Programs}. IEEE Transactions on Software Engineering 41(12):1236--1256,
+  \doi{10.1109/TSE.2015.2454513}
+
+\bibitem[{Lemon et~al.(2009)Lemon, Riesbeck, Menzies, Price, D'Alessandro,
+  Carlsson, Prifiti, Peters, Lu, and Port}]{me09j}
+Lemon B, Riesbeck A, Menzies T, Price J, D'Alessandro J, Carlsson R, Prifiti T,
+  Peters F, Lu H, Port D (2009) {Applications of Simulation and AI Search:
+  Assessing the Relative Merits of Agile vs Traditional Software Development}.
+  In: IEEE ASE'09
+
+\bibitem[{Lessmann et~al.(2008)Lessmann, Baesens, Mues, and
+  Pietsch}]{lessmann08}
+Lessmann S, Baesens B, Mues C, Pietsch S (2008) {Benchmarking Classification
+  Models for Software Defect Prediction: A Proposed Framework and Novel
+  Findings}. IEEE Trans Softw Eng 34(4):485--496, \doi{10.1109/TSE.2008.35}
+
+\bibitem[{Lewis et~al.(2013)Lewis, Lin, Sadowski, Zhu, Ou, and
+  Whitehead~Jr.}]{lewis13}
+Lewis C, Lin Z, Sadowski C, Zhu X, Ou R, Whitehead~Jr EJ (2013) Does bug
+  prediction support human developers? findings from a google case study. In:
+  Proceedings of the 2013 International Conference on Software Engineering,
+  IEEE Press, Piscataway, NJ, USA, ICSE '13, pp 372--381,
+  \urlprefix\url{http://dl.acm.org/citation.cfm?id=2486788.2486838}
+
+\bibitem[{Lowry et~al.(1998)Lowry, Boyd, and Kulkami}]{LowryBK98}
+Lowry M, Boyd M, Kulkami D (1998) Towards a theory for integration of
+  mathematical verification and empirical testing. In: Automated Software
+  Engineering, 1998. Proceedings. 13th IEEE International Conference on, IEEE,
+  pp 322--331
+
+\bibitem[{Madeyski and Jureczko(2015)}]{madeyski2015process}
+Madeyski L, Jureczko M (2015) Which process metrics can significantly improve
+  defect prediction models? an empirical study. Software Quality Journal
+  23(3):393--422
+
+\bibitem[{McCabe(1976)}]{mccabe1976complexity}
+McCabe TJ (1976) A complexity measure. IEEE Transactions on software
+  Engineering (4):308--320
+
+\bibitem[{Mensah et~al.(2018)Mensah, Keung, MacDonell, Bosu, and
+  Bennin}]{mensah2018investigating}
+Mensah S, Keung J, MacDonell SG, Bosu MF, Bennin KE (2018) Investigating the
+  significance of the bellwether effect to improve software effort prediction:
+  Further empirical study. IEEE Transactions on Reliability (99):1--23
+
+\bibitem[{Menzies et~al.(2002)Menzies, Raffo, on~Setamanit, Hu, and
+  Tootoonian}]{me02f}
+Menzies T, Raffo D, on~Setamanit S, Hu Y, Tootoonian S (2002) Model-based tests
+  of truisms. In: Proceedings of IEEE ASE 2002, available from
+  \url{http://menzies.us/pdf/02truisms.pdf}
+
+\bibitem[{Menzies et~al.(2007{\natexlab{a}})Menzies, Dekhtyar, Distefano, and
+  Greenwald}]{Menzies2007a}
+Menzies T, Dekhtyar A, Distefano J, Greenwald J (2007{\natexlab{a}}) {Problems
+  with Precision: A Response to "Comments on 'Data Mining Static Code
+  Attributes to Learn Defect Predictors'"}. IEEE Transactions on Software
+  Engineering 33(9):637--640, \doi{10.1109/TSE.2007.70721}
+
+\bibitem[{Menzies et~al.(2007{\natexlab{b}})Menzies, Elrawas, Hihn, Feather,
+  Madachy, and Boehm}]{me07f}
+Menzies T, Elrawas O, Hihn J, Feather M, Madachy R, Boehm B
+  (2007{\natexlab{b}}) The business case for automated software engineering.
+  In: Proceedings of the twenty-second IEEE/ACM international conference on
+  Automated software engineering, ACM, pp 303--312
+
+\bibitem[{Menzies et~al.(2007{\natexlab{c}})Menzies, Greenwald, and
+  Frank}]{menzies07}
+Menzies T, Greenwald J, Frank A (2007{\natexlab{c}}) Data mining static code
+  attributes to learn defect predictors. IEEE transactions on software
+  engineering 33(1):2--13
+
+\bibitem[{Menzies et~al.(2007{\natexlab{d}})Menzies, Greenwald, and
+  Frank}]{me07b}
+Menzies T, Greenwald J, Frank A (2007{\natexlab{d}}) Data mining static code
+  attributes to learn defect predictors. IEEE Transactions on Software
+  Engineering Available from \url{http://menzies.us/pdf/06learnPredict.pdf}
+
+\bibitem[{Menzies et~al.(2013)Menzies, Butcher, Cok, Marcus, Layman, Shull,
+  Turhan, and Zimmermann}]{localvsglobal}
+Menzies T, Butcher A, Cok D, Marcus A, Layman L, Shull F, Turhan B, Zimmermann
+  T (2013) {Local versus Global Lessons for Defect Prediction and Effort
+  Estimation}. IEEE Transactions on Software Engineering 39(6):822--834,
+  \doi{10.1109/TSE.2012.83}
+
+\bibitem[{Menzies et~al.(2016)Menzies, Krishna, and Pryor}]{menzies2016promise}
+Menzies T, Krishna R, Pryor D (2016) The promise repository of empirical
+  software engineering data. north carolina state university, department of
+  computer science
+
+\bibitem[{Metzger and Pohl(2014)}]{metzger14}
+Metzger A, Pohl K (2014) Software product line engineering and variability
+  management: achievements and challenges. In: Proc. on Future of Software
+  Engineering, ACM, pp 70--84
+
+\bibitem[{Mkaouer et~al.(2014)Mkaouer, Kessentini, Bechikh, Deb, and
+  \'{O}~Cinn{\'e}ide}]{Mkaouer14}
+Mkaouer MW, Kessentini M, Bechikh S, Deb K, \'{O}~Cinn{\'e}ide M (2014)
+  Recommendation system for software refactoring using innovization and
+  interactive dynamic optimization. In: Proc. 29th ACM/IEEE Intl. Conf.
+  Automated Software Engineering, ACM, New York, NY, USA, ASE '14, pp 331--336,
+  \doi{10.1145/2642937.2642965}
+
+\bibitem[{Moghadam(2011)}]{Moghadam2011}
+Moghadam IH (2011) Search Based Software Engineering: Third Intl. Symposium,
+  SSBSE 2011, Szeged, Hungary, September 10-12, 2011. Proceedings, Springer
+  Berlin Heidelberg, Berlin, Heidelberg, chap Multi-level Automated Refactoring
+  Using Design Exploration, pp 70--75. \doi{10.1007/978-3-642-23716-4_9}
+
+\bibitem[{Nagappan and Ball(2005)}]{nagappan05}
+Nagappan N, Ball T (2005) Static analysis tools as early indicators of
+  pre-release defect density. In: Proc. 27th Intl. Conf. Software engineering,
+  ACM, pp 580--586
+
+\bibitem[{Nam and Kim(2015{\natexlab{a}})}]{Nam15}
+Nam J, Kim S (2015{\natexlab{a}}) {Heterogeneous defect prediction}. In: Proc.
+  2015 10th Jt. Meet. Found. Softw. Eng. - ESEC/FSE 2015, ACM Press, New York,
+  New York, USA, pp 508--519, \doi{10.1145/2786805.2786814}
+
+\bibitem[{Nam and Kim(2015{\natexlab{b}})}]{Nam2015}
+Nam J, Kim S (2015{\natexlab{b}}) {Heterogeneous defect prediction}. In: Proc.
+  2015 10th Jt. Meet. Found. Softw. Eng. - ESEC/FSE 2015, ACM Press, New York,
+  New York, USA, pp 508--519, \doi{10.1145/2786805.2786814}
+
+\bibitem[{Nam et~al.(2013{\natexlab{a}})Nam, Pan, and Kim}]{Nam13}
+Nam J, Pan SJ, Kim S (2013{\natexlab{a}}) {Transfer defect learning}. In: Proc.
+  Intl. Conf. on Software Engineering, pp 382--391,
+  \doi{10.1109/ICSE.2013.6606584}
+
+\bibitem[{Nam et~al.(2013{\natexlab{b}})Nam, Pan, and Kim}]{Nam2013}
+Nam J, Pan SJ, Kim S (2013{\natexlab{b}}) {Transfer defect learning}. In: Proc.
+  Intl. Conf. Software Engineering, pp 382--391,
+  \doi{10.1109/ICSE.2013.6606584}
+
+\bibitem[{Nam et~al.(2017)Nam, Fu, Kim, Menzies, and Tan}]{fu18}
+Nam J, Fu W, Kim S, Menzies T, Tan L (2017) Heterogeneous defect prediction.
+  IEEE Transactions on Software Engineering PP(99):1--1,
+  \doi{10.1109/TSE.2017.2720603}
+
+\bibitem[{Nayrolles and Hamou-Lhadj(2018)}]{nayrolles2018clever}
+Nayrolles M, Hamou-Lhadj A (2018) Clever: Combining code metrics with clone
+  detection for just-in-time fault prevention and resolution in large
+  industrial projects. In: Mining Software Repositories
+
+\bibitem[{O'Keeffe and Cinn{\'e}ide(2008)}]{OKeeffe08}
+O'Keeffe M, Cinn{\'e}ide MO (2008) Search-based refactoring: An empirical
+  study. J Softw Maint Evol 20(5):345--364, \doi{10.1002/smr.v20:5}
+
+\bibitem[{O'Keeffe and Cinneide(2007)}]{OKeeffe07}
+O'Keeffe MK, Cinneide MO (2007) Getting the most from search-based refactoring.
+  In: Proc. 9th Annual Conf. Genetic and Evolutionary Computation, ACM, New
+  York, NY, USA, GECCO '07, pp 1114--1120, \doi{10.1145/1276958.1277177}
+
+\bibitem[{Oliveira et~al.(2014)Oliveira, Valente, and Lima}]{oliveira}
+Oliveira P, Valente MT, Lima FP (2014) {Extracting relative thresholds for
+  source code metrics}. In: 2014 Software Evolution Week - IEEE Conf. Software
+  Maintenance, Reengineering, and Reverse Engineering (CSMR-WCRE), IEEE, pp
+  254--263, \doi{10.1109/CSMR-WCRE.2014.6747177}
+
+\bibitem[{Ostrand et~al.(2004)Ostrand, Weyuker, and Bell}]{ostrand04}
+Ostrand TJ, Weyuker EJ, Bell RM (2004) Where the bugs are. In: ISSTA '04: Proc.
+  the 2004 ACM SIGSOFT Intl. symposium on Software testing and analysis, ACM,
+  New York, NY, USA, pp 86--96
+
+\bibitem[{Passos et~al.(2011)Passos, Braun, Cruzes, and Mendonca}]{passos11}
+Passos C, Braun AP, Cruzes DS, Mendonca M (2011) Analyzing the impact of
+  beliefs in software project practices. In: ESEM'11
+
+\bibitem[{Peters et~al.(2015)Peters, Menzies, and Layman}]{peters15}
+Peters F, Menzies T, Layman L (2015) {LACE2: Better privacy-preserving data
+  sharing for cross project defect prediction}. In: Proc. Intl. Conf. Software
+  Engineering, vol~1, pp 801--811, \doi{10.1109/ICSE.2015.92}
+
+\bibitem[{Rahman and Devanbu(2013)}]{rahman2013}
+Rahman F, Devanbu P (2013) How, and why, process metrics are better. In: 2013
+  35th International Conference on Software Engineering (ICSE), IEEE, pp
+  432--441
+
+\bibitem[{Rathore and Kumar(2019)}]{Rathore2019}
+Rathore SS, Kumar S (2019) A study on software fault prediction techniques.
+  Artificial Intelligence Review 51(2):255--327,
+  \doi{10.1007/s10462-017-9563-5},
+  \urlprefix\url{https://doi.org/10.1007/s10462-017-9563-5}
+
+\bibitem[{Ruhe(2010)}]{ruhe2010product}
+Ruhe G (2010) Product release planning: methods, tools and applications. CRC
+  Press
+
+\bibitem[{Ruhe and Greer(2003)}]{ruhe2003quantitative}
+Ruhe G, Greer D (2003) Quantitative studies in software release planning under
+  risk and resource constraints. In: Empirical Software Engineering, 2003.
+  ISESE 2003. Proceedings. 2003 Intl. Symposium on, IEEE, pp 262--270
+
+\bibitem[{Russell and Norvig(1995)}]{norvig}
+Russell S, Norvig P (1995) Artificial Intelligence: A Modern Approach.
+  Prentice-Hall, Egnlewood Cliffs
+
+\bibitem[{Sayyad et~al.(2013)Sayyad, Ingram, Menzies, and Ammar}]{sayyad13}
+Sayyad AS, Ingram J, Menzies T, Ammar H (2013) Scalable product line
+  configuration: A straw to break the camel's back. In: Automated Software
+  Engineering (ASE), 2013 IEEE/ACM 28th Intl. Conf., IEEE, pp 465--474
+
+\bibitem[{Sharma et~al.(2016)Sharma, Jiang, Bommannavar, Larson, and
+  Lin}]{sharma2016graphjet}
+Sharma A, Jiang J, Bommannavar P, Larson B, Lin J (2016) Graphjet: real-time
+  content recommendations at twitter. Proceedings of the VLDB Endowment
+  9(13):1281--1292
+
+\bibitem[{Shatnawi(2010)}]{shatnawi}
+Shatnawi R (2010) A quantitative investigation of the acceptable risk levels of
+  object-oriented metrics in open-source systems. IEEE Transactions on Software
+  Engineering 36(2):216--225, \doi{10.1109/TSE.2010.9}
+
+\bibitem[{Shatnawi and Li(2008)}]{shatnawi2008effectiveness}
+Shatnawi R, Li W (2008) The effectiveness of software metrics in identifying
+  error-prone classes in post-release software evolution process. Journal of
+  systems and software 81(11):1868--1882
+
+\bibitem[{Shull et~al.(2002)Shull, ad~B.~Boehm, Brown, Costa, Lindvall, Port,
+  Rus, Tesoriero, and Zelkowitz}]{shu02}
+Shull F, ad~B~Boehm VB, Brown A, Costa P, Lindvall M, Port D, Rus I, Tesoriero
+  R, Zelkowitz M (2002) What we have learned about fighting defects. In:
+  Proceedings of 8th International Software Metrics Symposium, Ottawa, Canada,
+  pp 249--258
+
+\bibitem[{Son and Pontelli(2006)}]{son06}
+Son TC, Pontelli E (2006) Planning with preferences using logic programming.
+  Theory and Practice of Logic Programming 6(5):559--607
+
+\bibitem[{Stroggylos and Spinellis(2007)}]{stroggylos2007}
+Stroggylos K, Spinellis D (2007) Refactoring--does it improve software quality?
+  In: Software Quality, 2007. WoSQ'07: ICSE Workshops 2007. Fifth Intl.
+  Workshop on, IEEE, pp 10--10
+
+\bibitem[{Tallam and Gupta(2006)}]{tallam2006concept}
+Tallam S, Gupta N (2006) A concept analysis inspired greedy algorithm for test
+  suite minimization. ACM SIGSOFT Software Engineering Notes 31(1):35--42
+
+\bibitem[{Theisen et~al.(2015)Theisen, Herzig, Morrison, Murphy, and
+  Williams}]{theisen15}
+Theisen C, Herzig K, Morrison P, Murphy B, Williams L (2015) Approximating
+  attack surfaces with stack traces. In: ICSE'15
+
+\bibitem[{Turhan et~al.(2009)Turhan, Menzies, Bener, and Di~Stefano}]{turhan09}
+Turhan B, Menzies T, Bener AB, Di~Stefano J (2009) On the relative value of
+  cross-company and within-company data for defect prediction. Empirical
+  Software Engineering 14(5):540--578
+
+\bibitem[{Turhan et~al.(2011)Turhan, Tosun, and Bener}]{turhan11}
+Turhan B, Tosun A, Bener A (2011) Empirical evaluation of mixed-project defect
+  prediction models. In: Software Engineering and Advanced Applications (SEAA),
+  2011 37th EUROMICRO Conf., IEEE, pp 396--403
+
+\bibitem[{Weimer et~al.(2009)Weimer, Nguyen, {Le Goues}, and
+  Forrest}]{Weimer2009}
+Weimer W, Nguyen T, {Le Goues} C, Forrest S (2009) {Automatically finding
+  patches using genetic programming}. In: Proc. Intl. Conf. Software
+  Engineering, IEEE, pp 364--374, \doi{10.1109/ICSE.2009.5070536}
+
+\bibitem[{Wooldridge and Jennings(1995)}]{wooldridge95}
+Wooldridge M, Jennings NR (1995) Intelligent agents: Theory and practice. The
+  knowledge engineering review 10(2):115--152
+
+\bibitem[{Ying et~al.(2018)Ying, He, Chen, Eksombatchai, Hamilton, and
+  Leskovec}]{ying2018graph}
+Ying R, He R, Chen K, Eksombatchai P, Hamilton WL, Leskovec J (2018) Graph
+  convolutional neural networks for web-scale recommender systems. In:
+  Proceedings of the 24th ACM SIGKDD International Conference on Knowledge
+  Discovery \& Data Mining, ACM, pp 974--983
+
+\bibitem[{Yoo and Harman(2012)}]{yoo2012regression}
+Yoo S, Harman M (2012) Regression testing minimization, selection and
+  prioritization: a survey. Software Testing, Verification and Reliability
+  22(2):67--120
+
+\bibitem[{Zhang and Li(2007)}]{zhang07:TEC}
+Zhang Q, Li H (2007) {MOEA/D: A Multiobjective Evolutionary Algorithm Based on
+  Decomposition}. Evolutionary Computation, IEEE Transactions on
+  11(6):712--731, \doi{10.1109/TEVC.2007.892759}
+
+\bibitem[{Zimmermann et~al.(2009)Zimmermann, Nagappan, Gall, Giger, and
+  Murphy}]{Zimmermann09}
+Zimmermann T, Nagappan N, Gall H, Giger E, Murphy B (2009) {Cross-project
+  defect prediction}. Proc 7th joint meeting of the European software
+  engineering conference and the ACM SIGSOFT symposium on The foundations of
+  software engineering on European software engineering conference and
+  foundations of software engineering symposium - E p~91,
+  \doi{10.1145/1595696.1595713}
+
+\bibitem[{Zitzler and K\"{u}nzli(2004)}]{zit04}
+Zitzler E, K\"{u}nzli S (2004) {Indicator-Based Selection in Multiobjective
+  Search}. In: Parallel Problem Solving from Nature - PPSN VIII, Lecture Notes
+  in Computer Science, vol 3242, Springer Berlin Heidelberg, pp 832--842,
+  \doi{10.1007/978-3-540-30217-9\_84}
+
+\bibitem[{Zitzler et~al.(2002)Zitzler, Laumanns, and Thiele}]{zit02}
+Zitzler E, Laumanns M, Thiele L (2002) {SPEA2: Improving the Strength Pareto
+  Evolutionary Algorithm for Multiobjective Optimization}. In: Evolutionary
+  Methods for Design, Optimisation, and Control, CIMNE, Barcelona, Spain, pp
+  95--100
+
+\end{thebibliography}

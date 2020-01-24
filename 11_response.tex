@@ -1,0 +1,204 @@
+\pagebreak
+\newpage
+% \appendix
+% \renewcommand{\baselinestretch}{1.5}
+\section*{\textbf{AUTHORS' RESPONSE}}
+
+\renewcommand*{\thesection}{\Alph{section}}
+\nobalance
+
+\noindent Dear Editor, 
+
+Thank you very much for your comments. We have taken all the reviews into careful consideration have made appropriate changes to the manuscript to reflect those changes. In order to assist  the  reviewers  in  tracking  all the  changes we have incorporated in this version, we have ensured that all the new additions have been prefixed with \respto{X-XX} to correspond to reviewers' concerns.
+
+We hope this new draft adequately satisfies all the issues and concerns raised by the reviewers.
+
+\noindent Sincerely,\hfill
+
+\vspace{10pt}
+
+\noindent Rahul Krishna and Tim Menzies
+
+
+\section*{Reviewer 2}
+Thank you very much for your detailed review. We have made several 
+corrections, clarifications, and revisions as directed by your comments, we believe this new draft has significantly improved thanks to your feedback. In order to assist in your review, we refer to specific locations of each of the changes using \respto{2-XX}.
+
+\review{R2-A. The proposed approach (in \S6.1.1) analyzes consecutive versions, some of the analyzed versions are not consecutive (e.g., versions 1.2 and 1.4 in Camel project). So, I recommend including the missing consecutive version (e.g., version 1.3) or excluding these projects from the study.}
+
+Thank you for highlighting this issue, the usage of the word \enquote{consecutive} was an error on our part. We obtained our dataset from the PROMISE repository (now SEACRAFT)~\citep{Jureczko2010}. While it would be ideal to have contiguous releases, several projects in the repository did not satisfy this specific requirement. Discarding such projects would leave us with too few projects to drawing any reasonable conclusions. 
+
+We did not consider the lack of contiguous releases to be much of an impediment since we only required a temporal ordering of the datasets so as to train on an older release of the project, generate plans of the current release of the project, and reflect on a future release to see if the plans were implemented. 
+
+Therefore, we only enforced one constraint during the selection of the projects that there must be at least three releases for the project. We have updated our text to remove references to \enquote{consecutive} releases~\citeresp{2-A}.
+
+\review{R2-B. For the BELLTREE approach, it will be helpful to report the processing time to identify the bellwether project (along with the number of explored files) so developers can predict the required time to identify the bellwether project for large projects.}
+
+BELTREE uses a \textit{round-robin} approach to compare all pairs of projects. This strategy results in a theoritical computational complexity of $O(N^2)$. This has been added to our current draft~\citeresp{2-B}. 
+
+We do not report the exact runtime as these are subject to the specifics of the hardware on which the experiments are run. For reference, in the case of the largest dataset explored here, i.e., $\mathit{Xalan}$ with 3320 rows and 20 columns, the training time to discover the bellwether was approximately 5 minutes on our experimental setup which used an Intel Core i7-8700K with 6 cores and a base frequency of 3.70 GHz. Thus, the worst case runtime for the projects in~\fig{datasets} would approximately be about 25-30 minutes.
+
+\review{R2-C. In \S5.1, it is not clear how the defect probability is calculated for the leaf nodes. So, I recommend including clarification about how it is calculated.}
+
+We do apologize for the confusion here. Briefly, the defect probability is computed using the defect counts of the training instances that fall in the certain leaf node. For example, after constructing the decision tree, let's there are 5 instances in a leaf node. Out of these, if 4 were defective, then the defect probability of the leaf node would be $4/5 = 0.8$.  We have updated the text in our paper to make this point more explicit\citeresp{2-C}.
+
+\review{R2-D. In \S5.1, Algorithm 1, since Algorithm 1 is a recursive algorithm, it is not clear when this recursive function \texttt{NARY\_DTREE} stops.}
+
+Thank you for pointing this out. We realize our original draft did not make this clear, we have now updated our current draft to highlight the termination criteria~\citeresp{2-D}. Briefly, we use the number of features (OO metrics) denoted by $N$ to determine the termination criteria. If a split results in a leaf node with less than $\sqrt{N}$ instances, then we do not proceed with further splits. This represents our the termination criteria. 
+
+\review{R2-E. High correlation with both increase and decrease in defects, \enquote{\S7, Experimental results (RQ2), the proposed approach XTREE has a high correlation value with both the changes that lead to an increase/decrease in the number of defects. So, it seems that XTREE approach achieves high accuracy in predicting the OO metric values of the following version ($\mathit{V_{i+1}}$) given the current version ($\mathit{V_i}$) and the prior version ($\mathit{V_{i-1}}$). In my point of view, the accurate planner should provide a high correlation with the changes that reduced the defects and low correlation with the other changes (which is not valid in our case). The current results may question the usefulness of the proposed approach. For example, if the developer of a project with 200 buggy files wants to leverage the proposed approach, XTREE approach will recommend changes for these 200 files that will lead to both increase/decrease in the number of defects while it should provide mainly useful suggestions.}}
+
+We understand your concern regarding our RQ2 results. While devising our experimental study, we considered the use of correalation. However, we chose not to compute the correlation value between $\mathit{overlap}$ and defects increased/decreased because we were interested only in the cases with large overlaps, i.e., cases where overlap $>75\%$. In these cases, we measure what impact the changes have on bug count. Correlation we found was ill-suited for this purpose because it does not distinguish between low-/high-overlaps it only measures the linearity of the relationship between overlap and defect count. For example, in an ideal case where every plan offered by XTREE is followed, the overlaps at 0\% --- 99\% would be zero and so would the value of correlation, but would be most misleading. 
+
+Accordingly, in our results we would like to see that a large number of defects are removed at high overlaps and no defects are added at high overlaps. In the example with 200 buggy files, we would want most of the 200 defects to be removed when overlap with XTREE's recommendations are high, i.e, close to 100\%. 
+
+A close analog to the above example is the project $\mathit{Xerces}$ from Figure 8. Here, over 300 bugs are reduced when changes are similar to those proposed by XTREE and only 32 bugs added. This indicates that XTREE's plans are mostly useful being upto 10 times more effective in reducing bugs when the plans are incorporated. 
+
+Indeed, in an ideal case, we would like for the number of defects added to be zero. But, this expectation is unrealistic given that our planner only makes recommendations based on what has been shown to be effective in the past. These past changes may or may not hold well for the future changes. 
+
+
+
+\section*{Reviewer 3}
+
+\noindent\textit{``A very unique SE paper at the intersection of AI Planning + Quality Assurance. I like the formulation of these 3 RQs. The background of AI Planning (Section 4) is quite valuable for AI newcomers in SE. K-test is a great idea.''}
+
+Thank you very much for your comments and your considered review. We have carefully evaluated our work based on your questions and comments and we have a made number of modifications in response to your review. We hope this new draft is significantly improved and answers your questions adequately. Note that, in assist in tracking the specific location of the changes, we refer to specific locations of each of the changes using \respto{3-XX}.
+
+\review{R3-A. For the first time reader, I like all these 3 RQs. However, there are a few sentences that are raised concerns about the originality and novelty of this paper.} 
+
+We do apologize for the confusion here. While a simple variant of XTREE was initially proposed by us in our IST article, subsequent discussions with our colleagues highlighted a number of limitations to those prior findings. In response to those concerns, we have significantly modified our approach to generating plans with XTREE and we present a more robust validation scheme that was missing from our previous study.   
+
+\noindent\textit{`` ... In fact, XTREE was published by the same authors since 2015 at an ASE workshop. Later on, a more comprehensive evaluation of XTREE was published at the IST Journal ... '' 
+}
+
+Below is a brief summary of the changes from the previous two articles:
+\be
+\item Inter-dependencies between metrics were ignored. In this paper, we use a combination of frequent pattern mining and random-walk traversal to generate plans the respect metrics that commonly change together.  
+\item The previous articles used defect prediction to validate plans. The limitations of predictive preformance of defect predictors prevented us from fully understanding how closely our plans resemble real world changes. 
+\item The previous findings were reported on only a small subset of the projects studied here. Further, even in those selected projects, the accuracy of the defect predictors used for validation of the plans were limited to at most 65\%. 
+\ee 
+%
+%\noindent\textit{``... I think the key issue is that Fig 1 (relationship to prior studies) did not explain how RQ1 and RQ2 are different from prior studies. Thus, to my understanding, the novelty of this paper is only the evaluation of the combination of BELLWETHER + XTREE for cross-project settings (RQ3) ...''
+%}
+To address the above concern, we have updated \S1 to highlight the key differences between this work and our previous reports~\citeresp{3-A}.  
+
+\review{R3-B. I miss the justification part for \S5.1} 
+\be
+\item \textit{``When saying that an effective planner must know which metrics change together. I do not get why?''} This is because the OO metrics are not independent of each other. A commonly used examples are those of the relationships $\mathit{LOC}$ and coupling metrics such as $\mathit{CBO}$, $\mathit{CA}$, $\mathit{CE}$, etc. Changing one invariably changes the others and thus, plans that recommend changes in isolation to any of these metrics are not practicable in real life.
+
+\item \textit{``Can we just use Spearman correlation? If not, why?''} Correlation assumes a linear relationship between pairs of metrics. This does not apply to our case because, (a)~The relationships between metrics are not necessarily linear, and (b)~The relationships between metrics seldom occur in pairs. Thus, we make use of a more general approach to discovering which metrics change together with the help of frequent pattern mining~\citeresp{3-B}.
+
+\item \textit{``In fact, I do understand how XTREE works but I do not follow the intuition behind to convince me that XTREE does really work in software engineering.''} We apologize for the lack of clarity. The key intuition behind XTREE is as follows: 
+\begin{quote}
+   In order for developers to adopt a recommendation, a planner must recommend changes like those that have been seen before. 
+\end{quote}
+Other methods like that of Alves, Shatnawi, Oliveira, and our previous variant of XTREE do not fully take into account the above intuition. Firstly, they all recommend changes to metrics in isolation. Secondly, they were offered as theoritical tools and were not validated on real-world projects as we have in this paper.    
+\ee
+
+In response to your query here, we have significantly modified the description of XTREE (and BELLTREE) in \S5.1~\citeresp{3} of our current draft.
+
+\review{R3-C. The outcome of the XTREE-generated plans (which metric to change, as shown in Fig 5) does not answer the ultimate goal of AI planning (how much to charge for each metric). This is quite a big concern as it is unclear how XTREE answers the ultimate goal of AI planning that is well-defined in Section 4.}
+
+We apologize for the confusion here. There actions recommended by XTREE are indeed specific changes to the metrics. It works as follows:
+\be
+\item We first use frequent pattern mining to determine the set of metrics that most commonly change together (see step-1 in~\tion{XTREE})
+\item Next, we build a decision tree to determine which range of values for each metric indicate high-/low-defect likelihood. 
+\item Given a defective test case, we pass it down the tree constructed above. 
+\item Then, we identify all the  ``better'' nodes in the tree, i.e., node with low defect probabilities.
+\item Finally, we use a random-walk model to get to these ``better'' nodes from the current node.
+\ee
+
+Note that the path taken by the random-walk is what generates a plan. For example, in the case of~\fig{xtree}.C, we note that:
+\be
+\item The test case finds itself on the far left, i.e., the ``current node'' has: $RFC: [0, 1)$, $KLOC: [3,5)$ and $DIT: [1,6)$
+\item After implementing the random walk, we find that ``desired'' node is on the far right (highlighed in \colorbox{black}{{\color{white} black}})
+\item The path taken to get from the ``current node'' to the ``desired node'' would require that the following changes be made.
+\bi
+\item[$\circ$] $~RFC:  [0, 1) \longrightarrow [1, 5)$;
+\item[$\circ$] $KLOC:  [0, 1) \longrightarrow [1, 3)$; and
+\item[$\circ$] $~CBO:  [6, 10)$
+\ei
+\ee
+
+We obtain these ranges because the path traverses through the nodes in the tree,the range of metric values in the nodes along the path will help generate the recommended plan. 
+
+We hope that our current rewritten \tion{XTREE}~\citeresp{3-C} adequately address your concerns regarding plan generation with XTREE. 
+
+\review{R3-D. The paper mentioned that, \enquote{Note again, that we only ever measure overlap on defective files in version Vk that were defective. There may be several files in Vk that are not defective. These non-defective files are ignored so as not bias our findings}\ldots}
+
+\bi[wide=0pt]
+\item \textit{\enquote{Does it mean that XTREE is limited to only defective files for the current release?}} Not really, XTREE is a generic planning framework for SE tasks. It may be used for any file in the current release. We assess XTREE on only the defective files in order to (a) limit to scope of this study to defect reduction, and (b) comply with the nature of the data (OO metrics and corresponding defect counts). If, say, we had access to additional information about the file (such as code smells), then XTREE can be used to generate plans to remove/reduce those code smells. Since we don't have access to that data, we report only defect reduction results. In theory, XTREE is not limited to any specific file/domain.  
+\item \textit{\enquote{Does it mean that XTREE does not work + cannot generate plans for non-defective files for the current release?}} In short, XTREE can generate plans for any file. In order for XTREE to work there needs to be measure of the current status of the file and a desired status for that file. If these can be quatified adequately, then XTREE can work in any case. In this paper, we use defect counts as a quantification for the status of the files. Our goal is to answer, ``What needs to be done to fix this \textit{defective} file''.  But if additional data were available regarding the remaining file, XTREE can just as easily be used. 
+\item \textit{\enquote{Does it mean that XTREE cannot accurately generate plans for any future files (test instances in the future releases ($V_{k+1}$))?}} For files in an upcoming future release of the project we envision using XTREE as an assement tool. For example, if a developer has a file X that is staged for release that has potential defects, then they may use XTREE to obtain some potential fixes for the files before it is released.     
+\ei
+
+In summary, we would like to point out that XTREE is \textit{not} limited to defective files only. Neither is it limited to files in the current release. We chose to use it this way so as to accurately validate the recommendations obtained by XTREE. In practice, if a file may be quantified in terms of certain attributes (here we used OO metrics) and measure of the code quality (here we use the defect counts) then XTREE may be used there to discover what changes to the attributes leads to better code quality.  
+
+\section*{Reviewer 4}
+
+Thank you very much for your detailed review. 
+
+\review{R4-A. What I really did not get was, why only test files in $V_k$ which are reported buggy'? How did you know they are reported buggy? Surely you only know they are reported buggy because in V(k+1) they are fixed' in version control?}
+
+XTREE is a generic planning framework for SE tasks. It may be used for any file in the current release. We assess XTREE on only the defective files in order to (a) limit to scope of this study to defect reduction, and (b) comply with the nature of the data (OO metrics and corresponding defect counts). 
+
+XTREE can generate plans for any file, even if it is not-defective. Since this is a planning task, it is important to define the scope of what is being planned for. In this paper, our goal is to answer, ``What needs to be done to fix this \textit{defective} file''. In other words, our scope of planning is defect reduction. If there is a defect then we hope developers can use tools such as XTREE to generate possible actions to remove those defects. 
+
+That said, the framework offered by XTREE is quite generic. For XTREE to work there needs to be measure of the current status of the file and a desired status for that file. If these can be quatified adequately, then XTREE can work in any case. 
+
+As to your specific question, ``How did you know they are reported buggy? Surely you only know they are reported buggy because in $V_{k+1}$ they are fixed' in version control?'', we offer two answers:
+\be
+\item[a. ] The defect counts were measured using a post-release bug tracking system. Jureczko et al.~\citep{Jureczko2010} made available these datasets and discuss their data collection scheme in detail. Briefly, they use a post-release bug tracking system like bugzilla to record the number of defects and which files were defective for a current release $V_k$.  
+\item[b. ] In some projects, like the ones we have studied here, (see~\fig{datasets}), Jureczko et al.~\citep{Jureczko2010} measure the bugs from bugzilla for a future release ($V_{k+1}$) too.
+\ee
+From the above, if the same file appears in $V_k$ and in $V_{k+1}$ as it does numerous times in our dataset. We can see how many defects were reported in $V_k$ and how many are left in $V_{k+1}$, parallely we can measure the changes in OO metrics to study how the bug fix manifests itself in terms of OO metrics. 
+
+\review{R4-B. Why not suggest plans for $V_k$ not reported buggy? Hopefully the changes should be zero or even minor. In fact, the overlap with developers is likely to be less?} 
+
+This is great question! There were several reasons why we did not conduct this experiment, we list them below:
+\be
+\item \textit{Methodological reason.} Firstly, attempting to generate plans when the files are non-defective means that in a lot of cases, those test cases will already find themselves in one of the ``good'' nodes in the tree, i.e., the test cases will land in nodes that already have the least defect likelihood (see the nodes in \colorbox{black}{{\color{white} black}} in~\fig{xtree}.C). This means that there are no better nodes for the random walk traversal to traverse to and thus, XTREE recommends no changes.   
+\item \textit{Practical reason.} Secondly, we envision XTREE as a change recommendation oracle designed for defect reduction. By that, we mean that when files are defective developers can use XTREE to guide the fix. When there are no defects, we do not see the current version of XTREE being useful.   
+\ee
+
+An important point we would like to highlight is with regards to the framework of XTREE. we would like to point out that XTREE is \textit{not} limited to defective files only. Neither is it limited to files in the current release. We chose to use it this way so as to accurately validate the recommendations obtained by XTREE. In practice, if a file may be quantified in terms of certain attributes (here we used OO metrics) and measure of the code quality (here we use the defect counts) then XTREE may be used there to discover what changes to the attributes leads to better code quality. For example, if one has access to say code-smell data, then XTREE can be used to recommend refactoring operations.
+
+\review{R4-C. What are the counts measuring? If \tt{fb} is a file in $V_k$ which is not buggy, \tt{fB} is a file in $V_k$ which is buggy, \tt{Fb} is the corresponding file in $V_{k+1}$ which is not buggy and \tt{FB} is the corresponding file in $V_k+1$ which is buggy.... what are the counts for?
+\be[leftmargin=2em]
+\item[a.]  \tt{fb} $\rightarrow$ \tt{Fb}
+\item[b.]  \tt{fb} $\rightarrow$ \tt{FB}
+\item[c.]  \tt{fB} $\rightarrow$ \tt{Fb}
+\item[d.]  \tt{fB} $\rightarrow$ \tt{FB}
+\ee
+} 
+\noindent To answer your question, we take the liberty of updating your notation as follows:
+\be
+  \item \tt{fB} is a file in $V_k$ which is buggy, and $|nB|$ is the number of bugs in \tt{fB}
+  \item \tt{FB} is a file in $V_{k+1}$ which is buggy, and $|NB|$ is the number of bugs in \tt{FB}
+\ee  
+The counts measures: $NB - nB$
+\bi
+  \item If counts is \textit{negative} then defects have be \textit{reduced}
+  \item If counts is \textit{positive} then defects have be \textit{increased}
+\ei  
+
+\review{R4-D. How do you determine the number of defects inserted?}
+
+We do apologize for the confusion here. The answer to this question follows from the response to your previous question. Briefly, if we say
+\be
+  \item \tt{fB} is a file in $V_k$ which is buggy, and $|nB|$ is the number of bugs in \tt{fB}
+  \item \tt{FB} is a file in $V_{k+1}$ which is buggy, and $|NB|$ is the number of bugs in \tt{FB}
+\ee  
+And we measure counts as: $NB - nB$
+\bi
+  \item If counts is \textit{positive} then $|NB - nB|$ measures the defects \textit{increased}.
+\ei  
+
+
+\review{R4-E. For your validation to work (with XTREE), you need at least three versions, in fig 3 (really a table?) Lucene only has two versions reported.  while looking at fig 3, \% defective... is that an average across all versions? Perhaps the number of buggy files in each version may be relevant.}  
+
+We do apologize for the confusion. This was typographical error. $\mathit{Lucene}$ in fact does have 3 versions. All the projects we study do. We have also updated Fig. 3 as per your recommendation.  
+
+\review{R4-F. Fig 10 does not make it clear that the results were produced using BELLTREE?}
+
+Thank you for highlighting this problem. We have now fixed the caption to this figure. 

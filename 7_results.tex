@@ -1,0 +1,121 @@
+\section{Experimental Results}
+\label{sect:results}
+
+All our experiments were conducted on a 6 core, 3.7 GHz, Intel i7-8700K running an Ubuntu 18.04 operating system. 
+
+\subsection*{{\bf RQ1: How well do planners recommendations match  developer actions?}}
+\input{RQ1.tex}
+
+To answer this question, we measure the \textit{overlap} between the planners' recommendations and the developer's actions. To measure this, we split the available data into training, testing, and validation sets. That is, given versions $\mathcal{V}_1, \mathcal{V}_2, \mathcal{V}_3....$, we, 
+\be
+\item {\em train} the planners on version $\mathcal{V}_1$; then 
+\item {\em generate plans} using the planners for version $\mathcal{V}_2$;
+\item then {\em validate} the effectiveness of those plans on $\mathcal{V}_2$ using the \ktest.
+\ee
+Then,  we repeat the process by training on $\mathcal{V}_2$, testing on $\mathcal{V}_3$, and validating on version $\mathcal{V}_4$, and so on. For each of these $\{train, test, validation\}$ sets, we measure the \textit{overlap} and categorize them into 4 ranges:
+\bi
+\item very little, i.e. $0-25\%$;
+\item some, i.e. $26\%-50\%$;
+\item more, i.e. $51\%-75\%$;
+\item mostly, i.e. $76\%-100\%$.
+\ei
+\fig{results} shows the results of planning with several planners: XTREE, Alves, Shatnawi, and Oliveira. Note, for the sake of brevity, we illustrate results for 4 projects-- Ant, Camel, Poi, and Xerces. A full set set results for all projects are available at  \url{https://git.io/fjkNM}. 
+
+We observe a clear dichotomy in our results. 
+\bi
+\item All outlier statistics based planners (i.e., those of Alves, Shatnawi, and Oliveira) have overlaps only in the range of 0\% to 25\%. This means that \textit{most of the developers actions did not match the recommendations proposed by these planners.}
+\item In the case of XTREE, the largest number of files had an overlap of 76\% to 100\% and second largest was between 51\% to 75\%. This means that, in a majority of cases developers actions are 76\% to 100\% similar to XTREE's recommendations. At the very least, there was an 51\% similarity between XTREE's recommendations and developers actions.
+\ei
+We observe this trend in all 18 datasets-- XTREE significantly outperformed other threshold based planners in terms of the overlap between the plans and the actual actions undertaken by the developers. Note that reason the results are very negative about the methods of Alves, Shatnawi, Oliveira, et al. is because their recommendations would be very hard to operationalize (since those recommendations were seldom seen in the prior history of a project). Thus, our response to this research question can be summarized as follows:
+\input{RQ2.tex}
+
+\result{XTREE significantly outperforms all the other outlier statistics based planners. Further, in all the projects studied here, most of the developer actions to fix defects in a file has as 76\%--100\% overlap with the recommendations offered by XTREE.}
+
+\subsection*{{\bf RQ2: Do planners' recommendation lead to reduction in defects?}}
+
+
+In the previous research question measured the extent to which a planner's recommendations matched the actions taken by developers to fix defects in their files. But, the existence of a high overlap in most files does not necessarily mean that the defects are actually reduced. Likewise, it is also conceivable that that defects are added due to other actions the developer took during their development. Thus, it is important to ask how many defects are reduced, and how many are added, in response to larger overlap with the planners' recommendations.
+
+Our experimental methodology to answer this research question is as follows: 
+\bi
+\item Like before, we measure the \textit{overlap} between the planners' recommendations developers' actions. \item Next, we plot the aggregate number defects reduced and in file with overlap values ranging from 0\% to 100\% in bins of size 25\% (for ranges of $0-25\%$, $26-50\%$, $51-75\%$, and $76-100\%$). 
+\ei
+Similar to RQ1, we compare XTREE with three other outlier statistics based planners of Alves et al., Shatnawi, and Oliveira, for the overall number of defects reduced and number of defects added. We prefer planners that have a large number defects reduced for higher overlap ranges are considered better.
+
+\fig{rq2} shows the results of planning with several planners: XTREE, Alves, Shatnawi, and Oliveira. Note that, similar to the previous research question, we only illustrate results for 4 projects-- Ant, Camel, Poi, and Xerces. A full set of results for RQ2 for all projects are available at \url{https://git.io/fjIvG}. 
+
+We make the following observations from in our results: 
+\be
+\item \textit{Defects Decreased}: \fig{rq2}\protect\subref{fig:rq2_a} plots the number of defects \textit{removed} in files with various overlap ranges. It is desirable to see larger defects removed with larger overlap. We note that:
+\bi
+\item When compared to other planners, the number of defects removed as a result of recommendations obtained by XTREE is significantly larger. This trend was noted in all the projects we studied here.
+\item In the cases of Ant, Camel, and Xerces there are large number of defect reduced when the overlap lies between 76\% and 100\%. Poi is an exception-- here, we note that the largest number of defects are removed when the overlap is between 51\% and 75\%. 
+\ei
+
+\item \textit{Defects Increased}: \fig{rq2}\protect\subref{fig:rq2_b} plots the number of defects \textit{added} in files with various overlap ranges. It is desirable to see lower number of defects added with larger overlap. We note that: 
+\bi
+\item When compared to other planners, the number of defects added as a result of recommendations obtained by XTREE is comparatively larger. This trend was noted in all the projects we studied here. This is to be expected since, developers actions seldom match the recommendations of these other planners. 
+
+\item In all the cases the number of defects removed was significantly larger than the number of defects added. For example, in the case of Camel, 420+ defects were removed at 76\% -- 100\% overlap and about 70 defects were added (i.e., 6$\times$ more defects were removed than added). Likewise, in the case of Xerces, over 300 defects were removed and only about 30 defects were added (i.e., 10$\times$ more defects were removed than added).
+\ei
+\ee
+
+The ratio of defects removed to the number of defects added is very important to asses. \fig{rq2_1} plots this ratio at 76\% -- 100\% overlap (it applied equally for the other overlap ranges as they have far fewer defects removed and added). From this chart, we note that out of 18 datasets, in 14 cases XTREE lead to a significant reduction in defects. For example, in the case of Ivy and Log4j, there were no defects added at all.
+
+However, in 4 cases, there were more defects added than there were removed. Given the idiosyncrasies  of real world projects, we do not presume that developers will always take actions as suggested by a planner. This may lead to defects being increased, however, based on our results we notice that this is not a common occurrence.
+In summary, our response to this research question is as follows:
+
+\noindent\result{Plans  generated  by  XTREE  are  superior  to  other  outlier  statistics based  planners  in  all  10  projects.  Planning  with  XTREE  leads  to  the  far larger number of defects reduced as opposed to defects added in 9 out of 10 projects studied here.}
+\input{RQ2_1.tex}
+\vspace{-0.4em}
+
+\subsection*{{\bf RQ3: Are  cross-project  plans  generated  by  BELLTREE  as  effective  as  within-project plans of XTREE?}}
+\input{RQ3.tex}
+
+In the previous two research questions, we made an assumption that there are past releases that can be used to construct the planners. However, this may not always be the case. For new project, it is quite possible that there are not any historical data to construct the planners. In such cases, SE literature proposes the use of \textit{transfer learning}. In this paper, we leverage the so-called \textit{bellwether} effect to identify a bellwether project. Having done so, we construct a planner quite similar to XTREE with the exception that the training data comes from the bellwether project. This variant of our planner that uses the bellwether project is called the BELLTREE (see \tion{CPXTREE} for more details).
+
+To answer this research question, we train XTREE on within-project data and generate plans for reducing the number of defects. We then compare this with plans derived from the bellwether data and BELLTREE. We hypothesized that since bellwethers have been demonstrated to be efficient in prediction tasks, learning from the bellwethers for a specific community of projects would produce performance scores comparable to within-project data. Our experimental methodology to answer this research question is as follows: 
+\be
+\item Like before, we measure the \textit{overlap} between the planners' recommendations developers' actions. 
+\item Next, we tabulate the aggregate number defects reduced (\fig{rq3}\protect\subref{fig:rq3_dec}) and the number of defects increased (\fig{rq3}\protect\subref{fig:rq3_inc}) in files with overlap values ranging from 0\% to 100\% in bins of size 25\% (for ranges of $0-25\%$, $26-50\%$, $51-75\%$, and $76-100\%$). 
+\ee
+
+Similar to previous research questions, we compare XTREE with BELLTREE and a random oracle (RAND). We prefer planners that have a large number defects reduced for higher overlap ranges and planner that have lower number of defects added are are considered better.
+
+We make the following observations from in our results: 
+\be
+\item \textit{Defects Decreased}: \fig{rq2}\protect\subref{fig:rq2_a} plots the number of defects \textit{removed} in files with various overlap ranges. It is desirable to see larger defects removed with larger overlap. We note that:
+\bi
+\item When compared to other planners, the number of defects removed as a result of recommendations obtained by XTREE is significantly larger. This trend was noted in all the projects we studied here.
+\item In the cases of Ant, Camel, and Xerces there are large number of defect reduced when the overlap lies between 76\% and 100\%. Poi is an exception-- here, we note that the largest number of defects are removed when the overlap is between 51\% and 75\%. 
+\ei
+
+\item \textit{Defects Increased}: \fig{rq2}\protect\subref{fig:rq2_b} plots the number of defects \textit{added} in files with various overlap ranges. It is desirable to see lower number of defects added with larger overlap. We note that: 
+\bi
+\item When compared to other planners, the number of defects added as a result of recommendations obtained by XTREE is comparatively larger. This trend was noted in all the projects we studied here. This is to be expected since, developers actions seldom match the recommendations of these other planners. 
+
+\item In all the cases the number of defects removed was significantly larger than the number of defects added. For example, in the case of Camel, 420+ defects were removed at 76\% -- 100\% overlap and about 70 defects were added (i.e., 6$\times$ more defects were removed than added). Likewise, in the case of Xerces, over 300 defects were removed and only about 30 defects were added (i.e., 10$\times$ more defects were removed than added).
+\ei
+\ee
+
+The ratio of defects removed to the number of defects added is very important to asses. \fig{rq2_1} plots this ratio at 76\% -- 100\% overlap (it applied equally for the other overlap ranges as they have far fewer defects removed and added). From this chart, we note that out of 18 datasets, in 14 cases XTREE lead to a significant reduction in defects. For example, in the case of Ivy and Log4j, there were no defects added at all.
+
+However, in 4 cases, there were more defects added than there were removed. Given the idiosyncrasies  of real world projects, we do not presume that developers will always take actions as suggested by a planner. This may lead to defects being increased, however, based on our results we notice that this is not a common occurrence.
+
+
+In summary, our response to this research question is as follows:\\
+
+
+\result{The effectiveness of BELLTREE and XTREE are similar. If within-project data is available, we recommend using XTREE. If not, BELLTREE is a viable alternative.}
+
+% \subsection*{{\bf RQ4: How many changes do the planners propose?}}
+% \input{deltas.tex}
+
+% This question naturally follows the findings of the previous research questions. Here, we ask how many changes each of the planners recommend. This is important because having plans recommend far too many changes would make it challenging for practical use. 
+
+% Our findings for XTREE tabulated in \fig{deltas}\footnote{Space limitations prohibit showing results of BELLTREE. We notice a very similar trend to XTREE. Interested readers can use our replication package (\url{https://git.io/fNcYY}) to further evaluate these results.} show that XTREE (BELLTREE) proposes far fewer changes compared to other planners. This is because, both XTREE and BELLTREE operate based on supervised learning incorporating two stages of data filtering and reasoning: (1) Discretization of attributes based on information gain, and (2) Plan generation based on contrast sets between adjacent branches. This is different to the other approaches. The operating principle of the other approaches is that attribute values larger than a certain threshold must always be reduced. Hence, they usually propose plans that use all attributes in an unsupervised manner, without first filtering out the less important attributes based on how they impact the quality of software. This leads to those planners being far more verbose and, possibly, harder to operationalize.
+
+
+% \result{Our planning methods (XTREE/BELLTREE) recommend far fewer changes than other methods.}
+
+

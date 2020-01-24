@@ -1,0 +1,74 @@
+\def\rot{\rotatebox}
+\begin{figure}[!htbp]
+\centering 
+\subfloat[subfig:plans][Defects Reduced. \textit{Higher defect reduction} for larger Overlap is considered \textit{better}.]{
+\arrayrulecolor[gray]{0.5}
+\resizebox{0.8\linewidth}{!}{
+\begin{tabular}{@{}l|rrr|rrr|rrr|rrr}
+            \rowcolor{white}& \multicolumn{3}{c|}{$[0, 25)$~~~~~~}       & \multicolumn{3}{c|}{$[25, 50)$~~~~~}       & \multicolumn{3}{c|}{$[50, 75)~~~~~$}       & \multicolumn{3}{c}{$[75, 100]$~~~~}       \bigstrut\\ \hline
+            &  \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~}  \bigstrut\\\hline
+ant-1      & \cellcolor{gr1}13    & \cellcolor{gr1}13    & 12       & 3     & \cellcolor{gr2}33    & 19       & 0     & \cellcolor{gr4}27    & 10       & 0     & \cellcolor{gr4}62    & 54       \bigstrut\\
+
+ant-2      & 0     & 6     & \cellcolor{gr1}13       & 0     & \cellcolor{gr2}42    & 33       & 0     & \cellcolor{gr4}27    & \cellcolor{gr4}27       & 0     & \cellcolor{gr4}124   & 61       \bigstrut\\
+
+ant-3      & \cellcolor{gr1}22    & 18    & 6        & 1     & \cellcolor{gr2}71    & 42       & 0     & \cellcolor{gr4}47    & 27       & 0     & 108   & \cellcolor{gr4}124      \bigstrut\\ \hline
+
+camel-1    & \cellcolor{gr1}76    & 29    & 10       & 0     & \cellcolor{gr2}90    & 30       & 0     & \cellcolor{gr3}52    & 20       & 0     & \cellcolor{gr4}226   & 98       \bigstrut\\
+
+camel-2    & \cellcolor{gr1}36    & 25    & 30       & 0     & \cellcolor{gr2}109   & 100      & 0     & \cellcolor{gr3}69    & 68       & 0     & \cellcolor{gr4}439   & 277      \bigstrut\\ \hline
+
+ivy-1      & 1     & 4     & \cellcolor{gr1}12       & 0     & 10    & \cellcolor{gr2}42       & 0     & 5     & \cellcolor{gr3}13       & 0     & 12    & \cellcolor{gr4}25       \bigstrut\\ \hline
+
+jedit-1    & \cellcolor{gr1}13    & 9     & 11       & 8     & 35    & \cellcolor{gr2}44       & 0     & 39    & \cellcolor{gr3}50       & 0     & \cellcolor{gr4}136   & 108      \bigstrut\\
+
+jedit-2    & \cellcolor{gr1}28    & 24    & 10       & 1     & \cellcolor{gr2}77    & 34       & 0     & 36    & \cellcolor{gr3}39       & 0     & 107   &\cellcolor{gr4} 135      \bigstrut\\
+
+jedit-3    & 18    & \cellcolor{gr1}30    & 28       & 1     & 67    & \cellcolor{gr2}75       & 0     & 28    & \cellcolor{gr3}35       & 0     & 70    & \cellcolor{gr4}106      \bigstrut\\ \hline
+
+log4j-1    & \cellcolor{gr1}5     & 1     & 0        & 0     & 7     & \cellcolor{gr2}14       & 0     & 3     & \cellcolor{gr3}8        & 0     & 8     & \cellcolor{gr4}50       \bigstrut\\ \hline
+
+poi-1      & 1     & 0     & \cellcolor{gr1}7        & 5     & 0     & \cellcolor{gr2}80       & 0     & 2     & \cellcolor{gr3}19       & 0     & 81    & \cellcolor{gr4}90       \bigstrut\\
+
+poi-2      & \cellcolor{gr1}78    & 4     & 0        & 18    & \cellcolor{gr2}135   & 0        & 0     & \cellcolor{gr3}27    & 2        & 0     & \cellcolor{gr4}87    & 83       \bigstrut\\ \hline
+
+velocity-1 & \cellcolor{gr1}51    & 2     & 6        & 0     & \cellcolor{gr2}25    & 15       & 0     & \cellcolor{gr3}39    & 32       & 0     & \cellcolor{gr4}90    & 48       \bigstrut\\ \hline
+
+xalan-1    & \cellcolor{gr1}22    & 6     & 2        & \cellcolor{gr2}105   & 43    & 51       & 13    & 60    & \cellcolor{gr3}66       & 0     & \cellcolor{gr4}409   & 230      \bigstrut\\
+
+xalan-2    & \cellcolor{gr1}110   & 0     & 6        & 0     & 38    & \cellcolor{gr2}49       & 0     & \cellcolor{gr3}102   & 54       & 0     & 83    & \cellcolor{gr4}408      \bigstrut\\ \hline
+
+xerces-1   & \cellcolor{gr1}23    & 2     & 11       & 0     & 11    & \cellcolor{gr2}13       & 0     & 17    & \cellcolor{gr3}24       & 0     & \cellcolor{gr4}305   & 49       \bigstrut\\
+
+xerces-2   & \cellcolor{gr1}7     & 0     & 2        & 0     & 3     & \cellcolor{gr2}11       & 0     & 6     & \cellcolor{gr3}18       & 0     & 117   & \cellcolor{gr4}305     
+
+\end{tabular}}
+\label{fig:rq3_dec}}\\
+\subfloat[subfig:plans][Defects Increased. In comparison to defects reduced in \fig{rq2}(a) above, we would like to have as little defects increased as possible.]{
+\arrayrulecolor[gray]{0.5}
+\resizebox{0.8\linewidth}{!}{
+\begin{tabular}{@{}l|rrr|rrr|rrr|rrr}
+            \rowcolor{white}& \multicolumn{3}{c|}{$[0, 25)$~~~~~~}       & \multicolumn{3}{c|}{$[25, 50)$~~~~~}       & \multicolumn{3}{c|}{$[50, 75)$~~~~~}       & \multicolumn{3}{c}{$[75, 100]$~~~~}       \bigstrut\\ \hline
+            &  \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~} & \rot{90}{RAND} & \rot{90}{XTREE} & \rot{90}{BELLTREE~~}  \bigstrut\\ \hline
+ant-1      & 15  & \cellcolor{gr1}1  & \cellcolor{gr1}3 & 0  & \cellcolor{gr2}10 & \cellcolor{gr2}11 & 0 & \cellcolor{gr3}2  & \cellcolor{gr3}1  & 0 & 4   & \cellcolor{gr4}2   \bigstrut\\
+ant-2      & 63  & 9  & \cellcolor{gr1}1 & 0  & 33 & \cellcolor{gr2}10 & 0 & 11 & \cellcolor{gr3}2  & 0 & 20  & \cellcolor{gr4}4   \bigstrut\\
+ant-3      & 69  & 22 & \cellcolor{gr1}9 & 0  & 38 & \cellcolor{gr2}33 & 0 & 15 & 11 & 0 & \cellcolor{gr4}10  & 20  \bigstrut\\ \hline
+camel-1    & 36  & 10 & \cellcolor{gr1}5 & 0  & \cellcolor{gr2}11 & 25 & 0 & \cellcolor{gr3}6  & 14 & 0 & \cellcolor{gr4}14  & 31  \bigstrut\\
+camel-2    & 112 & \cellcolor{gr1}5  & \cellcolor{gr1}2 & 0  & 26 & \cellcolor{gr2}15 & 0 & 17 & \cellcolor{gr3}\cellcolor{gr3}9  & 0 & 74  & \cellcolor{gr4}15  \bigstrut\\ \hline
+ivy-1      & 6   & \cellcolor{gr1}1  & \cellcolor{gr1}0 & 0  & \cellcolor{gr2}3  & \cellcolor{gr2}2  & 0 & \cellcolor{gr3}2  & \cellcolor{gr3}1  & 0 & 0   & 0   \bigstrut\\ \hline
+jedit-1    & 37  & \cellcolor{gr1}3  & \cellcolor{gr1}2 & 2  & 20 & \cellcolor{gr2}10 & 0 & 11 & \cellcolor{gr3}6  & 0 & 12  & \cellcolor{gr4}6   \bigstrut\\
+jedit-2    & 15  & \cellcolor{gr1}2  & \cellcolor{gr1}5 & 0  & \cellcolor{gr2}8  & 19 & 0 & \cellcolor{gr3}2  & 11 & 0 & \cellcolor{gr4}4   & 12  \bigstrut\\
+jedit-3    & 3   & \cellcolor{gr1}1  & \cellcolor{gr1}1 & 0  & 1  & \cellcolor{gr2}0  & 0 & \cellcolor{gr3}1  & \cellcolor{gr3}1  & 0 & 0   & 0   \bigstrut\\ \hline
+log4j-1    & 73  & \cellcolor{gr1}1  & \cellcolor{gr1}2 & 1  & 14 & \cellcolor{gr2}7  & 0 & 13 & \cellcolor{gr3}2  & 0 & 47  & \cellcolor{gr4}7   \bigstrut\\ \hline
+poi-1      & 190 & \cellcolor{gr1}1  & \cellcolor{gr1}1 & 6  & 7  & \cellcolor{gr2}1  & 0 & 5  & \cellcolor{gr3}0  & 0 & 182 & \cellcolor{gr4}6   \bigstrut\\
+poi-2      & 87  & 4  & \cellcolor{gr1}0 & 2  & 23 & \cellcolor{gr2}7  & 0 & 11 & \cellcolor{gr3}5  & 0 & \cellcolor{gr4}58  & 184 \bigstrut\\ \hline
+velocity-1 & 21  & \cellcolor{gr1}1  & \cellcolor{gr1}4 & 4  & \cellcolor{gr2}3  & 14 & 0 & \cellcolor{gr3}3  & 17 & 0 & 14  & \cellcolor{gr4}10  \bigstrut\\ \hline
+xalan-1    & 152 & \cellcolor{gr1}2  & \cellcolor{gr1}3 & 21 & 46 & \cellcolor{gr2}29 & 6 & 33 & \cellcolor{gr3}31 & 0 & \cellcolor{gr4}101 & 217 \bigstrut\\
+xalan-2    & 506 & 27 & \cellcolor{gr1}3 & 0  & \cellcolor{gr2}25 & 48 & 0 & 87 & \cellcolor{gr3}32 & 0 & 388 & \cellcolor{gr4}101 \bigstrut\\ \hline
+xerces-1   & 52  & \cellcolor{gr1}0  & \cellcolor{gr1}0 & 0  & 10 & \cellcolor{gr2}1  & 0 & 11 & \cellcolor{gr3}1  & 0 & \cellcolor{gr4}34  & 1   \bigstrut\\
+xerces-2   & 169 & 4  & \cellcolor{gr1}0 & 0  & 14 & \cellcolor{gr2}11 & 0 & \cellcolor{gr3}9  & 12 & 0 & 146 & \cellcolor{gr4}34 
+\end{tabular}}
+\label{fig:rq3_inc}
+}
+\caption{A count of total number \textit{defects reduced} and \textit{defects increased} as a result each planners' recommendations. The overlaps are again categorized into four ranges for every dataset (denoted by $min\leq~Overlap<max$). For each of the Overlap ranges, we count the total number of \textit{defects reduced} and \textit{defects increased} in the validation set for the classes that were defective in the test set as a result of Overlap between the planner's recommendation and the developers changes that fell in the given range}
+\label{fig:rq3}
+\end{figure}

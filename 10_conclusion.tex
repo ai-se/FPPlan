@@ -1,0 +1,25 @@
+\section{Conclusions and Future Work}
+\label{sect:future}
+% It is quite evident that there is a rapid growth of the use of data analytics in software engineering. Such a growth has revealed some open issues that need to be tackled. This paper is an attempt to address these issues. 
+
+Most software analytic tools that are currently in use today are mostly prediction algorithms. These algorithms are limited to making predictions. We extend this by offering ``planning'': a novel technology for prescriptive software analytics. Our planner offers users a guidance on what action to take in order to improve the quality of a software project. Our preferred planning tool is BELLTREE, which performs cross-project planning with encouraging results. With our BELLTREE planner, we show that it is possible to reduce several hundred defects in software projects. 
+
+It is also worth noting that BELLTREE is a novel extension of our prior work on (1) the bellwether effect, and (2) within-project planning with XTREE. In this work, we show that it is possible to use bellwether effect and within-project planning (with XTREE) to perform cross-project planning using BELLTREE, without the need for more complex transfer learners. Our results from~\fig{results} show that BELLTREE is just as good as XTREE, and both XTREE/BELLTREE are much better than other planners. 
+
+Further, we can see from \fig{deltas} that both BELLTREE and XTREE recommend changes to very few metric, while other unsupervised planners such as Shatnawi, Alves, and Olivera, recommend changing most of the metrics. This is not practical in many real world scenarios.
+
+
+Hence our overall conclusion is to endorse the use of planners like XTREE (if local data is available) or BELLTREE (otherwise).
+
+
+% Finally, we note that BELLTREE can offer stable solutions. As long as the bellwether data from which BELLTREE is constructed remains unchanged, so would plans that are derived from it. In this sense, practitioners can expect stable plans for relatively longer periods of time. This is in contrast to our XTREE planner. As more within-project data is gathered,  it is important that XTREE planner be updated. Such constant updates would invariably lead to unstable and often contradicting plans.
+
+
+% As for future work, we would like to undertake the following tasks:
+% \be
+% \item \textit{Industrial validation}: One of immediate goals is to validate the usefulness of these planners in a realistic development environment. As the first steps towards this, we are currently collaborating with a software company in RTP to deploy XTREE and BELLTREE planners in their pipeline. 
+% % \item \textit{Developer survey: }It would also be valuable to solicit developers' feedback on planners such as XTREE/BELLTREE. A study of their willingness to use such tools would greatly benefit the software analytics community.
+% \item \textit{Scaling planners:} It must be noted that the datasets studied here are relatively small. In order to be able to use XTREE/BELLTREE as a real time planner for very large projects. It is very important to scale these planners to accommodate very large datasets.
+% \ee
+
+

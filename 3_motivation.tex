@@ -1,0 +1,78 @@
+\section{Motivation}
+\label{sect:motivate}
+\subsection{Defect Prediction}
+\label{sect:defect_prediction}
+
+As projects evolve with additional functionalities, they also add defects, as a result the software may crash (perhaps at the most inopportune time) or  deliver incorrect or incomplete functionalities. Consequently, programs are tested before deployment. However, an exhaustive testing is expensive and software assessment budgets are finite~\citep{LowryBK98}.  Exponential  costs  quickly  exhaust  finite resources, so  standard  practice  is  to  apply  the  best  available methods only on code sections that seem most critical. 
+
+One approach is to use defect predictors learned from static code metrics. Given software described in terms of the metrics of~\tab{static_metrics}, data miners can learn where the probability of software defects is the highest. These static code metrics can be automatically collected, even for very large systems~\citep{nagappan05}. Further, these static code metrics based defect predictors can be quickly adapted to new languages by building lightweight parsers to computes metrics similar to that of~\tab{static_metrics}. Over the past decade, defect predictors have granered a significant amount of interest. They are frequently reported to be capable of finding the locations of over  70\% (or more) of the defects in code~\citep{me07b,Nam13,fu,ghotra2015revisiting,lessmann08,fu18,krishna17b}. Further, these defect predictors seem to have some level of generality~\cite{Nam13,Nam15,krishna16,krishna17b}. The success of these methods in finding bugs is markedly higher than other currently-used industrial methods such as manual code reviews~\citep{shu02}. Although other methods like  manual code reviews are much more accurate in identifying defects, they take much higher effort to find a defect and also are relatively slower. For example, depending on the review methods, 8 to 20 LOC/minute can be inspected and this effort repeats for all members of the review team, which can be as large as four or six people~\citep{me02f}. For these reasons, researchers and industrial practitioners use static code metrics to guide software  quality predictions. Defect prediction has been favored by organizations such as Google~\cite{lewis13} and Microsoft~\citep{Zimmermann09}. 
+
+  Although the ability to predict defects in software systems is viewed favorably by researchers and industrial practitioners, the current generation of defect prediction is subject to several criticisms. There is are open debates on the efficacy of static code metrics and the existence of causal links between these metrics and the defect counts. While a number of studies favor static code metrics, there are some that prefer other type of metrics. We explore these in greater detail in  \tion{metrics}.
+
+Another major criticism of software defect prediction is that they lack actionable guidance, i.e., while these techniques enable developers to target defect-prone areas faster, but do not guide developers toward a particular action that leads to a fix. Without a such guidance, developers are often tasked with making a majority of the decisions. However, this could be problematic since researchers have cautioned that developers' cognitive biases often leads to misleading assertions on how best to make a change. For instance, Passos et al.~\citep{passos11} remarks that developers often assume that the lessons they learn from a few past projects are general to all their future projects.  They comment, ``past experiences were taken into account without much consideration for their context''~\citep{passos11}. Such warnings are also echoed by J{\o}rgensen \& Gruschke~\citep{jorgensen09}. They report that the supposed software engineering experts seldom use lessons from past projects to improve their future reasoning and that such poor past advice can be detrimental to new projects. Other studies have shown that some widely-held views are now questionable given new evidence. Devanbu et al. observes that, on examination of responses from 564 Microsoft software developers from around the world, the programmer beliefs can vary significantly with each project, but that these beliefs do not necessarily correspond with actual evidence in that project~\citep{prem16}.
+
+For the above reasons, in this paper, we seek newer analytics tools that go beyond traditional defect prediction to offer ``plans''. Instead of just pointing to the likelihood of defects, these ``plans'' offer a set of changes that can be implemented to reduce the likelihood of future defects. We explore the notion of planning in greater detail in the following section (see~\tion{planning_intro}). 
+
+\subsection{Choice of Software Metrics}
+\label{sect:metrics}
+\input{metrics.tex}
+The data used in our studies use \textit{static code metrics} to quantify the aspects of software design. These metrics have been measured in conjunction with faults that are recorded at a number of stages of software development such as during requirements, design, development, in various testing phases of the software project, or with a post-release bug tracking systems. Over the past several decades, a number of \textit{metrics} have been proposed by researchers for the use in software defect prediction. These metrics can be classified into two  categories: (a) Product Metrics, and (b) Process Metrics.
+
+Product metrics are a syntactic measure of source code in a specific snapshot of a software project. The metrics consist of McCabe and Halstead complexity metrics, LOC (Lines of Code), and Chidamber and Kemerer Object-Oriented (CK OO) metrics as shown in as shown in~\tab{static_metrics}.~\cite{mccabe1976complexity} and~\cite{halstead77} metrics are a set of static code metrics that provide a quantitative measure of the code complexity based on the decision structure of a program. The idea behind these metrics is that the more structurally complex a code gets, the more difficult it becomes to test and maintain the code and hence the likelihood of defects increases. McCabe and Halstead metrics are well suited for traditional software engineering and are inadequate in and of themselves. To measure aspects of object oriented (OO) design such as classes, inheritance, encapsulation, message passing, and other unique aspects of OO approach,~\citep{chidamber1994metrics} developed as set of OO metrics. When used in conjunction with McCabe and Halstead metrics, these measures lend themselves to a more comprehensive analysis.
+
+Process metrics differ from product metrics in that they are computed using the data obtained from change and defect history of the program. Process metrics measure such aspects as the number of commits made to a file, the number of developers who changed the file, the number of contributors who authored less than 5\% of the code in that file, the experience of the highest contributor. All these metrics attempt to comment on the software development practice rather than the source code itself. 
+
+The choice of metrics from the perspective of defect prediction as has been a matter of much debate.  In recent years, a number of researchers and industrial practitioners (at companies such as Microsoft) have demonstrated the effectiveness of  static code metrics to build predictive analytics. A commonly reported effect by a number of researchers like~\citep{al2010object,shatnawi2008effectiveness,madeyski2015process,chidamber1998managerial,menzies07,alves,bener2015lessons,shatnawi,oliveira} is that OO metrics show a strong correlation with fault proneness. A comprehensive list of research on the correlation between product metrics and fault proneness can be found in Table 1 of the survey by~\citep{Rathore2019}.
+
+Some researchers have criticized the use of static code metrics to learn defect predictors. For instance,~\citep{graves2000} critiqued their effectiveness due to the fact that many metrics are highly correlated with each other, while~\citep{rahman2013} claim that static code metrics may not evolve with the changing distribution of defects, which leads code-metric-based prediction models becoming stagnated. However, on close inspection of both these studies, we noted that some of the most informative static code metrics have not been accounted for. For example, in the case of~\citep{graves2000}, they only inspect the McCabe and Halstead metrics and not object oriented metrics. In the case of~\citep{rahman2013}, (a) 37 out of 54 static code metrics (over $\frac{2}{3}$) are file-level metrics, most of which are not related to OO design, and (b) many of the metrics are repeated variants of the same measure (e.g., $CountLineCode$, $RatioCommentToCode$, $CountLineBlank$, etc are all measure of lines of code in various forms).  
+
+
+Given this evidence that static code metrics relate to defects, we use these metrics for our study. The defect dataset used in the rest of this this paper comprises a total of 38 datasets from 10 different projects taken from previous transfer learning studies. This group of data was gathered by Jureczko et al. \citep{Jureczko2010}. They recorded the number of known defects for each class using a post-release bug tracking system. The classes are described in terms of 20 OO metrics, including extended CK metrics, McCabes and complexity metrics, see~\tab{static_metrics} for description. We obtained the dataset from the SEACRAFT repository\footnote{$\text{https://zenodo.org/communities/seacraft/}$} (formerly the PROMISE repository~\citep{menzies2016promise}). 
+
+\input{datasets.tex}
+
+
+ 
+
+% In reply we note that correlation and causation are precisely defined
+% technical terms (e.g. see the calculation of Pearson's correlation
+% coefficient or Granger's predictive causality test), neither of which are used in the BELLTREEs research. BELLTREEs generates its plans from
+% different branches generated by a tree learner called CART.
+% CART is a data miner that builds its models
+% without any references to a correlation coeffecient.
+% As to causality, CART (and hence BELLTREEs)
+% makes approximate probabilistic
+% guesses that some attribute ranges $R$ are associated with some class values $V$. There is no causal claim by CART, or the plans generated
+% by  BELLTREEs, thar $R$ ``causes'' $V$. 
+% The imprecise, approximate, and non-causal nature of CART's trees
+% (and hence, BELLTREE's plans) are well-documented. Evidence:
+% it is routine to document the trees learned by data miners via the number
+% of correct and incorrect decisions made about the exampels that call down
+% different branches. In that documentation, it is common to see large
+% nonzero counts of inccorect decisions--XXXX
+
+
+
+
+% For example, Pearson's correlation coefficient is computed from
+% the covariance between two samples
+% \mbox{$\rho = \frac{\text{cov}(X,Y)}{\sigma_x \sigma_y}$}
+% between  two samples $X,Y$
+% with means $\overline{x}$
+% and $\overline{y}$), as estimated using $x_i \in X$ and $y_i \in Y$ via
+% $\rho = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}$. BELLTREE's plans are generated from CART
+% which recursively divides the sample into smaller and smaller sections
+% (so any overall mean and variance for $X,Y$ are disregarded by CART).
+
+% Causality, on the other hand, is a statement that 
+% Causation, on the other hand, is a statement that 
+% sustems outputs are fully and only 
+% A causal system is a system with output and internal states that depends only on the current and previous input values. 
+
+
+% Most defect prediction models are careful in drawing a distinction between correlation between software metrics and the causal effects of software metrics with defects. Establishing causal effects and leveraging them can be notoriously difficult. In a recent exposition of causality,~\citep{pearl2018book} argue that performing reliable causal discovery requires definition of new \textit{causal grammars} that are currently lacking in literature. Development of these causal grammars in software analytics are still in their infancy and this is evidenced by the fact that there are surprisingly few studies that seek to establish a causal link between software metrics and defect counts. 
+
+% In a recent study,~\citep{Rathore2019} performed a comprehensive systematic literature review on current generation of software defect prediction methodologies. Among the literature on defect prediction, and software metrics since 1993, they found only one study that attempted to establish a causal link between software metrics and defect counts. This study, by~\citep{couto2012}, used \citep{granger1969} causality to explore causal links between object oriented metrics and defect counts. They explored a small number of projects and found that there exist reasonable causal links between object oriented metrics and defects, however these relationships varied from one project to another. Further, these results must be considered carefully since recent research by~\citep{maziarz2015review} has shown that result of the Granger-causality test can often lead to different and possibly contradictory interpretations. 
+
+% In keeping with other literature in software analytics, this study only leverages correlations between object oriented metrics and defect counts. A study of causality is beyond the scope of this paper and is a part of potential future work.
+
